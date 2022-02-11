@@ -16,6 +16,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", 'BASE_URL', '"https://random-data-api.com/"'
+        buildConfigField "long", 'TIMEOUT', '10L'
+
     }
 
     buildTypes {
@@ -45,5 +48,5 @@ dependencies {
     implementation "com.google.android.material:material:${versions.material}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
-
+    implementation "io.insert-koin:koin-android:${versions.koin}"
 }
