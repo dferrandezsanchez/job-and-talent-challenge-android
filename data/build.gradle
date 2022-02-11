@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -30,5 +32,19 @@ android {
 }
 
 dependencies {
-    
+    implementation project(path: ":domain")
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.moshi:moshi:${versions.moshi}"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:${versions.moshi}"
+    implementation "com.squareup.retrofit2:converter-moshi:${versions.retrofit}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinx}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+
+    testImplementation "junit:junit:${versions.junit}"
+    testImplementation "io.mockk:mockk:${versions.mockk}"
+
+}
+repositories {
+    mavenCentral()
 }
