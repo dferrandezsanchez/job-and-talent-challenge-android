@@ -2,7 +2,6 @@ plugins {
     id "com.android.application"
     id "org.jetbrains.kotlin.android"
     id 'kotlin-android'
-    id 'kotlin-kapt'
 }
 
 android {
@@ -49,4 +48,6 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
     implementation "io.insert-koin:koin-android:${versions.koin}"
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
 }

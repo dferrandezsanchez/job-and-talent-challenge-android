@@ -22,6 +22,7 @@ buildscript {
             'ktlint'            :   '0.41.0',
             'material'          :   '1.5.0',
             'moshi'             :   '1.12.0',
+            'navigation'        :   '2.4.1',
             'retrofit'          :   '2.9.0',
             'okhttp'            :   '5.0.0-alpha.2',
             // Testing Deps
@@ -39,6 +40,7 @@ buildscript {
 plugins {
     id "io.gitlab.arturbosch.detekt" version '1.16.0'
     id 'com.diffplug.spotless' version '5.12.4'
+    id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
 }
 
 detekt {
