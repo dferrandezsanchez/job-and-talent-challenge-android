@@ -22,16 +22,15 @@ class ListViewModel(
     private val _restaurantsException = MutableLiveData<Throwable>()
     val restaurantsException: LiveData<Throwable> = _restaurantsException
 
-    private val _loadingData = MutableLiveData<Boolean>()
+    private val _loadingData = MutableLiveData<Boolean>(true)
     val loadingData: LiveData<Boolean> = _loadingData
 
     init {
         viewModelScope.launch {
-            _loadingData.postValue(true)
             withContext(Dispatchers.IO) {
                 when (val result = getRestaurantsUseCase()) {
                     is Response.Failure -> {
-                        _restaurantsException.value = result.exception
+                        _restaurantsException.postValue(result.exception)
                         _loadingData.postValue(false)
                     }
                     is Response.Success -> {
