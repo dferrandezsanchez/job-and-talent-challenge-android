@@ -7,7 +7,7 @@ interface IRestaurantsApi {
 
     companion object {
         private const val PATH_GET_PLACE =
-            "/api/restaurant/random_restaurant?size=100"
+            "/api/restaurant/random_restaurant?size=10"
     }
 
     @GET(PATH_GET_PLACE)

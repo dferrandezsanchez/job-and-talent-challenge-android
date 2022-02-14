@@ -18,5 +18,12 @@
         android:id="@+id/detailsFragment"
         android:name="dev.ferrandezdaniel.jobandtalentchallenge.ui.features.details.DetailsFragment"
         android:label="details_fragment"
-        tools:layout="@layout/details_fragment" />
+        tools:layout="@layout/details_fragment">
+
+        <argument
+            android:name="restaurantModel"
+            app:argType="dev.ferrandezdaniel.jobandtalentchallenge.ui.core.model.RestaurantModel"
+            app:nullable="false" />
+
+    </fragment>
 </navigation>

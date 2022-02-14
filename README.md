@@ -8,3 +8,4 @@ Problems
   - Several elements into list have the same image.
   - If we want to reload data on details Fragment for any reason, image would be different than the list one because lorenflicker serves a diferrent one every time
     - To solve this I implement a little workaround getting Bitmaps from Url and storing this on UI model, so when we load the list all elements has differents images and in the details Fragment the image is the same than the list element preview.
+- Error KaptDebugKotlin: Seems to be a bug on Moshi 1.12.0, I had to research something about and finally I found the solution updating to 1.13.0
