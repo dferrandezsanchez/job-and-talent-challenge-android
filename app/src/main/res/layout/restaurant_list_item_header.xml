@@ -11,7 +11,7 @@
         android:layout_width="@dimen/list_item_header_avatar_size"
         android:layout_height="@dimen/list_item_header_avatar_size"
         android:scaleType="centerCrop"
-        android:src="@color/purple_500"
+        tools:src="@color/purple_500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
