@@ -16,7 +16,9 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testApplicationId "dev.ferrandezdaniel.jobandtalentchallenge.ui.test"
+        testInstrumentationRunner ".CucumberTestRunner"
+
         buildConfigField "String", 'BASE_URL', '"https://random-data-api.com/"'
         buildConfigField "long", 'TIMEOUT', '10L'
 
@@ -35,10 +37,25 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    testOptions {
+        packagingOptions {
+            jniLibs {
+                useLegacyPackaging true
+            }
+        }
+    }
 
     buildFeatures{
         viewBinding true
     }
+}
+
+task runCucumberInstrumentationTests(type: Exec) {
+    File adb = android.getAdbExe()
+    description 'Runs instrumentation tests with Cucumber'
+    group 'verification'
+    dependsOn 'installDebug', 'installDebugAndroidTest'
+    commandLine "$adb", 'shell', 'am', 'instrument', '-w', 'dev.ferrandezdaniel.jobandtalentchallenge.ui.test/.CucumberTestRunner'
 }
 
 dependencies {
@@ -53,4 +70,14 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
     implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
     implementation "com.github.bumptech.glide:glide:${versions.glide}"
+
+    androidTestImplementation "androidx.navigation:navigation-testing:${versions.navigation}"
+    debugImplementation "androidx.fragment:fragment-testing:${versions.fragment_testing}"
+    androidTestImplementation "androidx.test:runner:${versions.test_runner}"
+    androidTestImplementation "androidx.test:rules:${versions.test_rules}"
+    androidTestImplementation "androidx.test.ext:junit:${versions.ext_junit}"
+    androidTestImplementation "io.cucumber:cucumber-android:${versions.cucumber_android}"
+    androidTestImplementation "io.cucumber:cucumber-picocontainer:${versions.cucumber_picocontainer}"
+    androidTestImplementation "com.adevinta.android:barista:${versions.barista}"
+    androidTestImplementation "io.mockk:mockk-android:${versions.mockk}"
 }
