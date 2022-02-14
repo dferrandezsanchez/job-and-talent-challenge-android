@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/list_item_image_height"
             android:scaleType="centerCrop"
-            android:src="@color/purple_500"
+            tools:src="@color/purple_500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/restaurantItemListHeaderLayout" />
@@ -30,7 +30,7 @@
             android:id="@+id/restaurantItemListSubTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="3"
+            android:maxLines="@integer/list_item_desc_text_max_lines"
             android:layout_margin="@dimen/medium"
             android:ellipsize="end"
             app:layout_constraintStart_toStartOf="@id/restaurantItemListImage"

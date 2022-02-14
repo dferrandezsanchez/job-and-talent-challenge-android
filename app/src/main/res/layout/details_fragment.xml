@@ -6,15 +6,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.features.details.DetailsFragment">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/detailsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DETAILS FRAGMENT"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/restaurantDetailsImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_image_height"
+        android:scaleType="centerCrop"
+        android:src="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/restaurantDetailsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium"
+        android:textSize="@dimen/list_details_name_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restaurantDetailsImage" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/restaurantDetailsType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/medium"
+        android:textSize="@dimen/list_details_type_text_size"
+        app:layout_constraintStart_toStartOf="@id/restaurantDetailsTitle"
+        app:layout_constraintTop_toBottomOf="@+id/restaurantDetailsTitle" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/restaurantDetailsDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium"
+        android:textSize="@dimen/list_details_desc_text_size"
+        app:layout_constraintStart_toStartOf="@id/restaurantDetailsType"
+        app:layout_constraintTop_toBottomOf="@+id/restaurantDetailsType" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
